@@ -1,0 +1,17 @@
+/* 3rd page  */
+ .DataS{
+color: #b31cb6;
+
+}
+
+.studentDataContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+}
+#studentData p {
+    margin: 1;
+}
+.DataS {
+    width: 110%;
+} 

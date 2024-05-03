@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="path/to/your/stylesheet.css">
+    <link rel="stylesheet" href="fsp.css">
+    <style>
+        body {
+            background: url(https://cdn.pixabay.com/photo/2013/05/12/18/55/balance-110850_640.jpg);
+            background-size: cover;
+        }
+       
+    </style>
+</head>
+<body>
+
+
+
+
+    <h1>Student Details</h1>
+      <table id="studentDataTable">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" class="DataS" disabled="" id="name"></td>
+        </tr>
+        <tr>
+            <td>ID:</td>
+            <td><input type="text" class="DataS" disabled="" id="id"></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><input type="text" class="DataS" disabled="" id="phone"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" class="DataS" disabled="" id="email"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td><input type="text" class="DataS" disabled="" id="gender"></td>
+        </tr>
+        <tr>
+            <td>Language:</td>
+            <td><input type="text" class="DataS" disabled="" id="language"></td>
+        </tr>
+    </table>
+    
+
+    <!-- <h1>Student Details</h1>
+    <div id="studentDataContainer">
+    <div id="studentData">
+        <p>Name    : <input type="text" class="DataS" id="name"></p>
+        <p>ID      : <input type="text" class="DataS" id="id"></p>
+        <p>Phone   : <input type="text" class="DataS" id="phone"></p>
+        <p>Email   : <input type="text" class="DataS" id="email"></p>
+        <p>Gender  : <input type="text" class="DataS" id="gender"></p>
+        <p>Language: <input type="text" class="DataS" id="language"></p>
+    </div>
+    </div> -->
+
+    <script>
+        var studentData = localStorage.getItem('SSSData');
+
+        if (studentData) {
+            try {
+                studentData = JSON.parse(studentData);
+                console.log(studentData);
+                document.getElementById('name').value = studentData.studentName;
+                document.getElementById('id').value = studentData.StudentId;
+                document.getElementById('phone').value = studentData.PhoneNo;
+                document.getElementById('email').value = studentData.Email;
+                document.getElementById('gender').value = studentData.gender;
+                document.getElementById('language').value = studentData.language;
+            } catch (error) {
+                console.error('Error parsing student data:', error);
+            }
+        } else {
+            console.error('No student data found in local storage.');
+        }
+    </script>
+</body>
+</html>

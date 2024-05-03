@@ -1,0 +1,26 @@
+body{
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+}
+footer{
+    margin-top: 50px;
+
+}
+
+.content{
+    display: grid;
+    justify-content: center;
+    
+
+
+#studentData p {
+    margin: 0;
+}
+
+
+.DataS {
+    width: 100%;
+}
+
+}
